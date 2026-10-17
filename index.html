@@ -52,6 +52,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Shared Configuration Engine -->
+    <script src="config.js"></script>
+
     <style>
         .gold-gradient-text {
             background: linear-gradient(135deg, #fdf4dc 0%, #e5c158 35%, #c59b27 70%, #997415 100%);
@@ -105,7 +108,7 @@
             <div class="flex items-center gap-4 text-[11px]">
                 <a href="https://wa.me/201000000000" target="_blank" class="hover:text-pharaoh-lightGold transition flex items-center gap-1 text-emerald-400 font-semibold">
                     <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
-                    <span>WhatsApp Direct: +20 100 000 0000</span>
+                    <span>WhatsApp Direct: <span class="bob-phone-display">+20 100 000 0000</span></span>
                 </a>
                 <span class="text-obsidian-border">|</span>
                 <div class="flex items-center gap-1">
@@ -324,7 +327,7 @@
                     <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-stone-400 block">All-Inclusive</span>
-                            <div class="font-cinzel text-2xl font-black text-pharaoh-lightGold price-val" data-usd="65" data-eur="60" data-gbp="52">$65</div>
+                            <div class="font-cinzel text-2xl font-black text-pharaoh-lightGold price-val" data-tour-id="balloon" data-usd="65" data-eur="60" data-gbp="52">$65</div>
                         </div>
                         <button onclick="openBookingModal('Sunrise Hot Air Balloon Flight', 65)" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold to-pharaoh-lightGold text-obsidian-base font-cinzel font-bold text-xs rounded-xl shadow hover:scale-105 transition">
                             Book Balloon
@@ -361,7 +364,7 @@
                     <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-stone-400 block">Private Guide & Car</span>
-                            <div class="font-cinzel text-2xl font-black text-white price-val" data-usd="45" data-eur="42" data-gbp="36">$45</div>
+                            <div class="font-cinzel text-2xl font-black text-white price-val" data-tour-id="westbank" data-usd="45" data-eur="42" data-gbp="36">$45</div>
                         </div>
                         <button onclick="openBookingModal('Valley of the Kings & Hatshepsut Private Tour', 45)" class="px-5 py-2.5 bg-obsidian-border hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel font-bold text-xs rounded-xl border border-pharaoh-gold/30 transition">
                             Book Tour
@@ -398,7 +401,7 @@
                     <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-stone-400 block">Private Guide & Car</span>
-                            <div class="font-cinzel text-2xl font-black text-white price-val" data-usd="40" data-eur="38" data-gbp="32">$40</div>
+                            <div class="font-cinzel text-2xl font-black text-white price-val" data-tour-id="eastbank" data-usd="40" data-eur="38" data-gbp="32">$40</div>
                         </div>
                         <button onclick="openBookingModal('Karnak & Luxor Temple Private Tour', 40)" class="px-5 py-2.5 bg-obsidian-border hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel font-bold text-xs rounded-xl border border-pharaoh-gold/30 transition">
                             Book Tour
@@ -435,7 +438,7 @@
                     <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-stone-400 block">Complete Day Experience</span>
-                            <div class="font-cinzel text-2xl font-black text-pharaoh-lightGold price-val" data-usd="120" data-eur="112" data-gbp="95">$120</div>
+                            <div class="font-cinzel text-2xl font-black text-pharaoh-lightGold price-val" data-tour-id="fullday" data-usd="120" data-eur="112" data-gbp="95">$120</div>
                         </div>
                         <button onclick="openBookingModal('The Ultimate Full-Day Luxor & Balloon', 120)" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold via-pharaoh-lightGold to-pharaoh-gold text-obsidian-base font-cinzel font-bold text-xs rounded-xl shadow hover:scale-105 transition">
                             Book Package
@@ -583,7 +586,7 @@
                     <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-stone-400 block">Private Felucca</span>
-                            <div class="font-cinzel text-2xl font-black text-white price-val" data-usd="30" data-eur="28" data-gbp="24">$30</div>
+                            <div class="font-cinzel text-2xl font-black text-white price-val" data-tour-id="felucca" data-usd="30" data-eur="28" data-gbp="24">$30</div>
                         </div>
                         <button onclick="openBookingModal('Sunset Nile Felucca & Banana Island', 30)" class="px-5 py-2.5 bg-obsidian-border hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel font-bold text-xs rounded-xl border border-pharaoh-gold/30 transition">
                             Book Felucca
@@ -620,7 +623,7 @@
                     <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-stone-400 block">Private Car & Guide</span>
-                            <div class="font-cinzel text-2xl font-black text-white price-val" data-usd="95" data-eur="88" data-gbp="75">$95</div>
+                            <div class="font-cinzel text-2xl font-black text-white price-val" data-tour-id="dendera" data-usd="95" data-eur="88" data-gbp="75">$95</div>
                         </div>
                         <button onclick="openBookingModal('Dendera & Abydos Day Trip', 95)" class="px-5 py-2.5 bg-obsidian-border hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel font-bold text-xs rounded-xl border border-pharaoh-gold/30 transition">
                             Book Day Trip
@@ -973,15 +976,21 @@
             <div>
                 <h4 class="text-white font-cinzel font-bold mb-4 text-xs uppercase tracking-widest">Direct Contact</h4>
                 <div class="space-y-3 text-xs">
-                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-pharaoh-gold"></i> Luxor, West Bank, Egypt</p>
-                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> WhatsApp: +20 100 000 0000</p>
-                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-sky-400"></i> tours@bobluxor.com</p>
+                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-pharaoh-gold"></i> <span class="bob-address-display">Luxor, West Bank, Egypt</span></p>
+                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> WhatsApp: <span class="bob-phone-display">+20 100 000 0000</span></p>
+                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-sky-400"></i> <a href="mailto:tours@bobluxor.com" class="bob-email-display hover:underline">tours@bobluxor.com</a></p>
                 </div>
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto pt-8 border-t border-stone-900 text-center text-xs text-stone-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 Bob Luxor Tours & Stays. All rights reserved.</p>
+            <div class="flex items-center gap-3">
+                <p>&copy; 2026 Bob Luxor Tours & Stays. All rights reserved.</p>
+                <span class="text-stone-700">•</span>
+                <a href="/admin" target="_blank" class="text-stone-600 hover:text-pharaoh-lightGold transition text-[11px] flex items-center gap-1 font-mono">
+                    <i data-lucide="lock" class="w-3 h-3"></i> Admin Portal
+                </a>
+            </div>
             <p class="text-stone-500 font-cinzel text-[11px] tracking-wider uppercase">Pay on Arrival • Licensed Ministry of Tourism Egyptologist</p>
         </div>
     </footer>
@@ -1244,8 +1253,31 @@
             message += `--------------------------------------\n`;
             message += `✅ Please confirm availability and pickup time!`;
 
+            // Save lead to local CRM storage so Bob sees it in his Admin Portal
+            try {
+                if (typeof addBobBooking === 'function') {
+                    addBobBooking({
+                        id: "BK-" + Date.now().toString(36).toUpperCase(),
+                        timestamp: new Date().toISOString(),
+                        name: name,
+                        country: country || "International",
+                        phone: phone,
+                        date: date,
+                        travelers: travelers,
+                        tour: tour,
+                        hotelChoice: hotelChoice,
+                        hotelInfo: hotelInfo,
+                        notes: notes,
+                        status: "New"
+                    });
+                }
+            } catch (err) {
+                console.warn("Could not save lead to CRM storage", err);
+            }
+
+            const activeNum = window.ACTIVE_BOB_WHATSAPP || (typeof getBobConfig === 'function' ? getBobConfig().whatsapp : BOB_WHATSAPP_NUMBER);
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${BOB_WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/${activeNum}?text=${encodedMessage}`;
 
             // Open WhatsApp directly
             window.open(whatsappUrl, '_blank');
