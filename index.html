@@ -143,13 +143,14 @@
 
             <!-- Desktop Nav Links -->
             <nav class="hidden lg:flex items-center gap-8 font-cinzel text-xs tracking-widest uppercase text-stone-300 font-semibold">
-                <a href="#tours" class="hover:text-pharaoh-lightGold transition">Private Tours</a>
-                <a href="#balloon" class="hover:text-pharaoh-lightGold transition flex items-center gap-1.5">
+                <a href="#tours" onclick="navigateCategory('all')" class="hover:text-pharaoh-lightGold transition">All Tours</a>
+                <a href="#tours" onclick="navigateCategory('balloon')" class="hover:text-pharaoh-lightGold transition flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
                     Hot Air Balloon
                 </a>
-                <a href="#hotels" class="hover:text-pharaoh-lightGold transition">Hotels & Stays</a>
-                <a href="#cruises" class="hover:text-pharaoh-lightGold transition">Nile Cruises</a>
+                <a href="#tours" onclick="navigateCategory('temples')" class="hover:text-pharaoh-lightGold transition">Temples</a>
+                <a href="#tours" onclick="navigateCategory('hotels')" class="hover:text-pharaoh-lightGold transition">Hotels & Stays</a>
+                <a href="#tours" onclick="navigateCategory('cruises')" class="hover:text-pharaoh-lightGold transition">Nile Cruises</a>
                 <a href="#about" class="hover:text-pharaoh-lightGold transition">About Us</a>
                 <a href="#reviews" class="hover:text-pharaoh-lightGold transition">Reviews</a>
             </nav>
@@ -267,7 +268,12 @@
     </section>
 
     <!-- SECTION: CATEGORY FILTER TABS (Elevating over Pylon Travel) -->
-    <section id="tours" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="tours" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <span id="balloon" class="sr-only"></span>
+        <span id="temples" class="sr-only"></span>
+        <span id="hotels" class="sr-only"></span>
+        <span id="cruises" class="sr-only"></span>
+        <span id="daytrips" class="sr-only"></span>
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
             <span class="text-xs font-cinzel font-bold tracking-[0.3em] uppercase text-pharaoh-gold">Curated Luxor Expeditions</span>
             <h2 class="font-cinzel text-3xl sm:text-5xl font-extrabold text-white">Private Tours, Flights & Stays</h2>
@@ -298,11 +304,48 @@
 
         <!-- Tours Grid -->
         <div id="toursGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Item 10: Desert Quad Bike Sunset Safari -->
+            <div class="luxury-card rounded-3xl overflow-hidden flex flex-col tour-item" data-category="daytrips">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80" alt="Luxor Desert Quad Bike Sunset Safari" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-obsidian-base/90 backdrop-blur-md text-pharaoh-lightGold text-[11px] font-cinzel font-bold px-3 py-1 rounded-full border border-pharaoh-gold/40">
+                        Desert Adventure
+                    </div>
+                    <div class="absolute bottom-4 right-4 bg-amber-500/90 text-obsidian-base text-[11px] font-bold px-3 py-1 rounded-full">
+                        2-3 Hours
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="font-cinzel text-xl font-bold text-white">Sunset Desert Quad Bike Safari</h3>
+                        <p class="text-xs text-stone-300 mt-2 line-clamp-3">
+                            Ride through the scenic rugged desert plains of Luxor on an exhilarating 250cc ATV quad bike. Includes Bedouin tea stop, safety helmets, and panoramic sunset views.
+                        </p>
+                    </div>
+
+                    <div class="space-y-1.5 text-xs text-stone-300 border-t border-obsidian-border pt-4">
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pharaoh-gold"></i><span>Roundtrip hotel/cruise transfers</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pharaoh-gold"></i><span>Automatic 4-wheel ATV quad bikes</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pharaoh-gold"></i><span>Authentic Bedouin tea & hospitality</span></div>
+                    </div>
+
+                    <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-stone-400 block">All-Inclusive</span>
+                            <div class="font-cinzel text-2xl font-black text-pharaoh-lightGold price-val" data-tour-id="quad" data-usd="35" data-eur="32" data-gbp="28">$35</div>
+                        </div>
+                        <button onclick="openBookingModal('Sunset Desert Quad Bike Safari', 35)" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold to-pharaoh-lightGold text-obsidian-base font-cinzel font-bold text-xs rounded-xl shadow hover:scale-105 transition">
+                            Book Safari
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             
             <!-- Item 1: Hot Air Balloon -->
             <div class="luxury-card rounded-3xl overflow-hidden flex flex-col tour-item" data-category="balloon">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Hot Air Balloon Luxor Sunrise" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=1000&q=80" alt="Hot Air Balloon Luxor Sunrise" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-obsidian-base/90 backdrop-blur-md text-pharaoh-lightGold text-[11px] font-cinzel font-bold px-3 py-1 rounded-full border border-pharaoh-gold/40">
                         Sunrise Bucket List
                     </div>
@@ -416,7 +459,7 @@
                     Best Value Package
                 </div>
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Full Day Luxor Complete" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1000&q=80" alt="Full Day Luxor Complete" class="w-full h-full object-cover">
                     <div class="absolute bottom-4 left-4 bg-obsidian-base/90 text-pharaoh-lightGold text-[11px] font-bold px-3 py-1 rounded-full">
                         Full Day (All-in-One)
                     </div>
@@ -524,7 +567,7 @@
             <!-- Item 7: Nile Cruise (Luxor to Aswan) -->
             <div class="luxury-card rounded-3xl overflow-hidden flex flex-col tour-item" data-category="cruises">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Nile Cruise Ship Luxor Aswan" class="w-full h-full object-cover">
+                    <img src="https://www.luxorbookingtours.com/admin/assets/images/uploads/1003_FCruise.WEBP" alt="5-Star Luxury Nile Cruise Ship Luxor Aswan" class="w-full h-full object-cover">
                     <div class="absolute top-4 left-4 bg-obsidian-base/90 text-sky-300 text-[11px] font-cinzel font-bold px-3 py-1 rounded-full border border-sky-500/40">
                         Nile Cruise
                     </div>
@@ -561,7 +604,7 @@
             <!-- Item 8: Sunset Felucca -->
             <div class="luxury-card rounded-3xl overflow-hidden flex flex-col tour-item" data-category="cruises">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Felucca Sailing Nile Sunset" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=1000&q=80" alt="Felucca Sailing Nile Sunset" class="w-full h-full object-cover">
                     <div class="absolute top-4 left-4 bg-obsidian-base/90 text-pharaoh-lightGold text-[11px] font-cinzel font-bold px-3 py-1 rounded-full border border-pharaoh-gold/40">
                         Traditional Sailing
                     </div>
@@ -598,7 +641,7 @@
             <!-- Item 9: Dendera & Abydos Day Trip -->
             <div class="luxury-card rounded-3xl overflow-hidden flex flex-col tour-item" data-category="daytrips">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800&q=80" alt="Dendera Temple Hathor" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1000&q=80" alt="Dendera Temple Hathor" class="w-full h-full object-cover">
                     <div class="absolute top-4 left-4 bg-obsidian-base/90 text-pharaoh-lightGold text-[11px] font-cinzel font-bold px-3 py-1 rounded-full border border-pharaoh-gold/40">
                         Day Trip
                     </div>
@@ -784,7 +827,7 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="h-64 rounded-2xl overflow-hidden relative group">
-                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80" alt="Hot air balloon over Luxor" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=80" alt="Hot air balloon over Luxor" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
                         <span class="text-xs font-cinzel font-bold text-white">Sunrise Over Kings Valley</span>
                     </div>
@@ -1053,6 +1096,7 @@
                         <option value="Karnak & Luxor Temple Secrets ($40)">🏛️ Karnak & Luxor Temple at Sunset ($40/person)</option>
                         <option value="The Ultimate Full-Day Luxor & Balloon ($120)">🌟 The Ultimate Full-Day Luxor & Balloon ($120/person)</option>
                         <option value="Sunset Nile Felucca & Banana Island ($30)">⛵ Sunset Nile Felucca & Banana Island ($30/person)</option>
+                        <option value="Sunset Desert Quad Bike Safari ($35)">🏜️ Sunset Desert Quad Bike Safari ($35/person)</option>
                         <option value="Dendera & Abydos Temples Day Trip ($95)">🏺 Dendera & Abydos Temples Day Trip ($95/person)</option>
                         <option value="5-Star Nile Cruise Luxor to Aswan (From $350)">⛵ 5-Star Nile Cruise Luxor to Aswan (From $350)</option>
                         <option value="Custom VIP Package (Tours + Hotel Booking)">🛎️ Custom VIP Package (Tours + Hotel Consultation)</option>
@@ -1180,6 +1224,17 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
+        }
+
+        
+        function navigateCategory(category) {
+            const toursSection = document.getElementById('tours');
+            if (toursSection) {
+                toursSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            setTimeout(() => {
+                filterTours(category);
+            }, 100);
         }
 
         function filterTours(category) {
