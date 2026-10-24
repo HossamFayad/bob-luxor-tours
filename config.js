@@ -4,11 +4,11 @@
  */
 
 const DEFAULT_BOB_CONFIG = {
-    whatsapp: "201000000000",
-    phoneDisplay: "+20 100 000 0000",
-    email: "tours@bobluxor.com",
-    address: "Luxor, West Bank, Egypt",
-    adminPin: "bob2026",
+    whatsapp: "201019831144",
+    phoneDisplay: "+20 101 983 1144",
+    email: "info@luxorbookingtours.com",
+    address: "Luxor, Egypt",
+    adminPin: "luxor2026",
     promoBanner: {
         active: true,
         badge: "Season Special",

@@ -21,10 +21,10 @@
                             muted: '#3b3123'
                         },
                         pharaoh: {
-                            gold: '#c59b27',
-                            lightGold: '#e5c158',
-                            amber: '#d97706',
-                            sand: '#f5e6cc',
+                            gold: '#f0850b',
+                            lightGold: '#fbbf24',
+                            amber: '#ea580c',
+                            sand: '#fef3c7',
                             nile: '#0284c7'
                         }
                     },
@@ -96,7 +96,7 @@
                 <div class="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-pharaoh-gold bg-gradient-to-tr from-obsidian-card to-obsidian-surface flex items-center justify-center text-pharaoh-lightGold shadow-lg shadow-pharaoh-gold/20">
                     <i data-lucide="shield-alert" class="w-8 h-8 text-pharaoh-lightGold"></i>
                 </div>
-                <h1 class="font-cinzel text-2xl font-black tracking-widest text-white">BOB LUXOR</h1>
+                <div class="flex items-center justify-center gap-2 mb-1"><img src="logo.svg" class="h-8 w-auto"><span class="font-cinzel text-xl font-black tracking-widest text-white">LUXOR BOOKING</span></div>
                 <p class="text-xs uppercase tracking-[0.25em] text-pharaoh-lightGold mt-1 font-semibold">Operator Admin Portal</p>
                 <p class="text-xs text-stone-400 mt-2 font-light">Enter master PIN to manage tours, prices, WhatsApp & tourist bookings</p>
             </div>
@@ -118,7 +118,7 @@
                     </div>
                     <p class="text-[11px] text-stone-500 mt-2 flex items-center gap-1">
                         <i data-lucide="info" class="w-3.5 h-3.5 text-pharaoh-gold"></i>
-                        Default PIN is <strong class="text-stone-300 font-mono">bob2026</strong> (can be changed in settings)
+                        Default PIN is <strong class="text-stone-300 font-mono">luxor2026</strong> (can be changed in settings)
                     </p>
                 </div>
 
@@ -157,7 +157,7 @@
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-cinzel text-lg font-black tracking-wider text-white">BOB LUXOR</span>
+                            <div class="flex items-center gap-2"><img src="logo.svg" class="h-7 w-auto"><span class="font-cinzel text-base font-black tracking-wider text-white">LUXOR BOOKING</span></div>
                             <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">OPERATOR LIVE</span>
                         </div>
                         <span class="text-[10px] text-stone-400 block tracking-wider">Tourism & Accommodation Control Hub</span>
@@ -238,7 +238,7 @@
                 <div class="luxury-card p-6 sm:p-8 rounded-2xl border border-pharaoh-gold/30 relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div class="relative z-10 space-y-2">
                         <span class="text-xs uppercase tracking-widest text-pharaoh-lightGold font-cinzel font-bold">Egyptian Tourism Operator Control</span>
-                        <h2 class="text-2xl sm:text-3xl font-cinzel font-bold text-white">Welcome back, <span class="gold-gradient-text">Bob</span>!</h2>
+                        <h2 class="text-2xl sm:text-3xl font-cinzel font-bold text-white">Welcome back to <span class="gold-gradient-text">Luxor Booking Tours</span>!</h2>
                         <p class="text-stone-400 text-sm max-w-2xl font-light">
                             All settings changed here update across your website instantaneously. When tourists submit reservations, they will dispatch straight to your configured WhatsApp and store in your leads inbox below.
                         </p>
@@ -442,7 +442,7 @@
                     <form onsubmit="handleContactSave(event)" class="space-y-5">
                         <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 space-y-2">
                             <label class="block font-cinzel text-xs font-bold uppercase tracking-wider text-emerald-400">
-                                Bob's WhatsApp Receiving Number (International Format)
+                                WhatsApp Receiving Number (International Format)
                             </label>
                             <div class="relative">
                                 <input type="text" id="settingWhatsapp" placeholder="e.g. 201001234567" required
@@ -473,7 +473,7 @@
                                 <label class="block font-cinzel text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">
                                     Support Email
                                 </label>
-                                <input type="email" id="settingEmail" placeholder="tours@bobluxor.com"
+                                <input type="email" id="settingEmail" placeholder="info@luxorbookingtours.com"
                                     class="w-full bg-obsidian-surface text-white text-xs border border-obsidian-border rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-pharaoh-gold">
                             </div>
                         </div>
@@ -726,7 +726,7 @@
             e.preventDefault();
             const entered = document.getElementById('pinInput').value.trim();
             const config = getBobConfig();
-            const correctPin = config.adminPin || 'bob2026';
+            const correctPin = config.adminPin || 'luxor2026';
 
             if (entered === correctPin) {
                 const remember = document.getElementById('rememberMe').checked;
@@ -738,7 +738,7 @@
                 document.getElementById('loginGate').classList.add('hidden');
                 document.getElementById('dashboardApp').classList.remove('hidden');
                 initDashboard();
-                showToast("Welcome to your Admin Portal, Bob!", "success");
+                showToast("Welcome to your Admin Portal!", "success");
             } else {
                 document.getElementById('loginError').classList.remove('hidden');
                 const card = document.querySelector('#loginGate .luxury-card');
@@ -977,7 +977,7 @@
             if (!item) return;
 
             const cleanPhone = item.phone.replace(/[^0-9]/g, '');
-            const replyMsg = `Hello ${item.name}! This is Bob from Bob Luxor Tours & Stays in Egypt.\n\nThank you for booking the *${item.tour}* for *${item.date}* (${item.travelers || '2 Travelers'}).\n\nI am writing to confirm your reservation and arrange your exact pickup details. Everything is set and ready for an unforgettable experience!`;
+            const replyMsg = `Hello ${item.name}! This is the reservations team from Luxor Booking Tours in Egypt.\n\nThank you for booking the *${item.tour}* for *${item.date}* (${item.travelers || '2 Travelers'}).\n\nI am writing to confirm your reservation and arrange your exact pickup details. Everything is set and ready for an unforgettable experience!`;
             
             const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(replyMsg)}`;
             window.open(url, '_blank');
@@ -1060,7 +1060,7 @@
             const link = document.createElement("a");
             const url = URL.createObjectURL(blob);
             link.setAttribute("href", url);
-            link.setAttribute("download", `bob-luxor-bookings-${new Date().toISOString().split('T')[0]}.csv`);
+            link.setAttribute("download", `luxor-booking-tours-${new Date().toISOString().split('T')[0]}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -1202,7 +1202,7 @@
 
         function testCurrentWhatsApp() {
             const num = (currentConfig.whatsapp || '201000000000').replace(/[^0-9]/g, '');
-            const msg = `🏛️ Hello Bob! This is a test message from your Bob Luxor Tours Operator Portal. Your WhatsApp booking dispatch is fully working!`;
+            const msg = `🏛️ Hello Bob! This is a test message from your Luxor Booking Tours Operator Portal. Your WhatsApp booking dispatch is fully working!`;
             window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
@@ -1282,7 +1282,7 @@
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(fullBackup, null, 2));
             const dlAnchor = document.createElement('a');
             dlAnchor.setAttribute("href", dataStr);
-            dlAnchor.setAttribute("download", `bob-luxor-full-backup-${new Date().toISOString().split('T')[0]}.json`);
+            dlAnchor.setAttribute("download", `luxor-booking-backup-${new Date().toISOString().split('T')[0]}.json`);
             document.body.appendChild(dlAnchor);
             dlAnchor.click();
             dlAnchor.remove();
