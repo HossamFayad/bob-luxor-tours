@@ -243,18 +243,18 @@ function applyBobConfigToFrontend() {
     });
 
     // 2. Update display phone numbers
-    document.querySelectorAll('.bob-phone-display').forEach(el => {
+    document.querySelectorAll('.bob-phone-display, .lbt-phone-display').forEach(el => {
         el.textContent = config.phoneDisplay || `+${cleanWhatsApp}`;
     });
 
     // 3. Update display emails
-    document.querySelectorAll('.bob-email-display').forEach(el => {
+    document.querySelectorAll('.bob-email-display, .lbt-email-display').forEach(el => {
         el.textContent = config.email;
         if (el.tagName === 'A') el.setAttribute('href', `mailto:${config.email}`);
     });
 
     // 4. Update display addresses
-    document.querySelectorAll('.bob-address-display').forEach(el => {
+    document.querySelectorAll('.bob-address-display, .lbt-address-display').forEach(el => {
         el.textContent = config.address;
     });
 
@@ -304,6 +304,7 @@ function applyBobConfigToFrontend() {
 
     // Export clean WhatsApp to global for index.html booking submit handler
     window.ACTIVE_BOB_WHATSAPP = cleanWhatsApp;
+    window.ACTIVE_LUXOR_WHATSAPP = cleanWhatsApp;
 }
 
 // Auto-run if running on index.html
@@ -314,3 +315,5 @@ if (typeof document !== 'undefined') {
         }
     });
 }
+
+const addLuxorBooking = typeof addBobBooking !== 'undefined' ? addBobBooking : function(){};

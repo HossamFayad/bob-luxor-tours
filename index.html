@@ -108,7 +108,7 @@
             <div class="flex items-center gap-4 text-[11px]">
                 <a href="https://wa.me/201019831144" target="_blank" class="hover:text-pharaoh-lightGold transition flex items-center gap-1 text-emerald-400 font-semibold">
                     <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
-                    <span>WhatsApp Direct: <span class="bob-phone-display">+20 101 983 1144</span></span>
+                    <span>WhatsApp Direct: <span class="lbt-phone-display">+20 101 983 1144</span></span>
                 </a>
                 <span class="text-obsidian-border">|</span>
                 <div class="flex items-center gap-1">
@@ -127,31 +127,17 @@
     <header class="sticky top-0 z-40 bg-obsidian-base/95 backdrop-blur-md border-b border-obsidian-border transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 py-4 flex items-center justify-between">
             <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="h-12 px-3 py-1.5 rounded-xl border border-pharaoh-gold/40 bg-obsidian-card flex items-center justify-center shadow-lg shadow-pharaoh-gold/15 group-hover:border-pharaoh-gold transition duration-300">
-                    <img src="logo.svg" alt="Luxor Booking Tours" class="h-8 w-auto">
-                </div>
-                <div>
-                    <span class="font-cinzel text-xl sm:text-2xl font-black tracking-[0.12em] text-white block leading-tight">
-                        LUXOR <span class="gold-gradient-text">BOOKING</span>
-                    </span>
-                    <span class="text-[9px] uppercase tracking-[0.25em] text-pharaoh-gold font-semibold block">
-                        Tours & Nile Cruises • Egypt
-                    </span>
-                </div>
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="logo.svg" alt="Luxor Booking Tours" class="h-10 sm:h-11 w-auto filter drop-shadow-md group-hover:brightness-110 transition duration-300">
             </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center gap-8 font-cinzel text-xs tracking-widest uppercase text-stone-300 font-semibold">
-                <a href="#tours" onclick="navigateCategory('all')" class="hover:text-pharaoh-lightGold transition">All Tours</a>
-                <a href="#tours" onclick="navigateCategory('balloon')" class="hover:text-pharaoh-lightGold transition flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    Hot Air Balloon
-                </a>
-                <a href="#tours" onclick="navigateCategory('temples')" class="hover:text-pharaoh-lightGold transition">Temples</a>
-                <a href="#tours" onclick="navigateCategory('hotels')" class="hover:text-pharaoh-lightGold transition">Hotels & Stays</a>
-                <a href="#tours" onclick="navigateCategory('cruises')" class="hover:text-pharaoh-lightGold transition">Nile Cruises</a>
-                <a href="#about" class="hover:text-pharaoh-lightGold transition">About Us</a>
+                        <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 font-cinzel text-xs tracking-widest uppercase text-stone-300 font-semibold">
+                <a href="#tours" class="hover:text-pharaoh-lightGold transition">Tours &amp; Safaris</a>
+                <a href="#cruises" class="hover:text-pharaoh-lightGold transition">Nile Cruises</a>
+                <a href="#transfers" class="hover:text-pharaoh-lightGold transition">Private Transfers</a>
+                <a href="#trip-builder" class="hover:text-pharaoh-lightGold transition">Custom Journey</a>
+                <a href="#about" class="hover:text-pharaoh-lightGold transition">Why Choose Us</a>
                 <a href="#reviews" class="hover:text-pharaoh-lightGold transition">Reviews</a>
             </nav>
 
@@ -753,64 +739,424 @@
         </div>
     </section>
 
-    <!-- SECTION: MEET BOB (Story, Authenticity & Personal Warmth) -->
+    <!-- SECTION: 5-STAR NILE CRUISES & DAHABIYAS (Core Revenue Pillar!) -->
+    <section id="cruises" class="py-24 bg-gradient-to-b from-obsidian-base via-obsidian-surface to-obsidian-base border-t border-b border-obsidian-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-3 max-w-2xl">
+                    <div class="inline-flex items-center gap-2 text-pharaoh-gold text-xs font-cinzel font-bold tracking-[0.25em] uppercase">
+                        <i data-lucide="anchor" class="w-4 h-4"></i>
+                        <span>Nile River Fleet &amp; Charters</span>
+                    </div>
+                    <h2 class="font-cinzel text-3xl sm:text-5xl font-black text-white leading-tight">
+                        5-Star Luxury Nile Cruises &amp; Dahabiyas
+                    </h2>
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                        Sail the timeless river between Luxor and Aswan in supreme comfort. Handpicked vessels featuring full-board gourmet dining, sun-deck plunge pools, private panoramic cabins, and included private Egyptologist excursions at every temple stop.
+                    </p>
+                </div>
+                <div class="shrink-0 flex items-center gap-3">
+                    <a href="https://wa.me/201019831144?text=Hello!%20I%20am%20inquiring%20about%20Nile%20Cruise%20dates%20and%20cabin%20rates." target="_blank" class="px-6 py-3.5 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-emerald-950/40 flex items-center gap-2 transition cursor-pointer">
+                        <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i>
+                        <span>Check Cruise Dates on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cruise Vessels Grid -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Vessel 1: MS Farah -->
+                <div class="luxury-card rounded-3xl overflow-hidden border border-pharaoh-gold/40 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/nile_cruise.webp" alt="MS Farah 5-Star Ultra Luxury Nile Cruise" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-obsidian-base/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-pharaoh-gold/40 text-[10px] font-cinzel font-bold text-pharaoh-lightGold uppercase tracking-wider">
+                            Ultra Luxury 5-Star
+                        </div>
+                        <div class="absolute bottom-3 right-4 bg-emerald-500/90 text-white px-3 py-1 rounded-full text-xs font-bold font-sans">
+                            Luxor ⇄ Aswan (4 Nights)
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                        <div class="space-y-2">
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-pharaoh-lightGold transition">M/S Farah Luxury Nile Cruise</h3>
+                            <p class="text-xs text-stone-300 leading-relaxed">
+                                Rated #1 boutique cruise ship on the Nile. French balconies, organic gourmet à la carte dining, sauna, telescope stargazing, and private Egyptologist lectures.
+                            </p>
+                        </div>
+                        <div class="space-y-2.5 text-xs text-stone-300 border-t border-b border-obsidian-border py-3">
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Full Board (Breakfast, Lunch &amp; Dinner Included)</div>
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Kom Ombo, Edfu &amp; Philae Temples Guided Tours</div>
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Complimentary Luxor &amp; Aswan Dock Transfers</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="text-[10px] uppercase text-stone-400 block font-cinzel">From</span>
+                                <span class="font-cinzel text-2xl font-black text-white">$480<span class="text-xs font-normal text-stone-400">/person</span></span>
+                            </div>
+                            <button onclick="openBookingModal('M/S Farah Luxury Nile Cruise (4 Nights)', 480)" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold to-amber-600 text-obsidian-base font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl hover:scale-105 transition shadow cursor-pointer">
+                                Inquire Cabins
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vessel 2: Blue Shadow Deluxe -->
+                <div class="luxury-card rounded-3xl overflow-hidden border border-pharaoh-gold/40 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/nile_cruise_sailing.jpg" alt="Blue Shadow 5-Star Deluxe Nile Cruise" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-obsidian-base/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-pharaoh-gold/40 text-[10px] font-cinzel font-bold text-pharaoh-lightGold uppercase tracking-wider">
+                            Deluxe 5-Star
+                        </div>
+                        <div class="absolute bottom-3 right-4 bg-emerald-500/90 text-white px-3 py-1 rounded-full text-xs font-bold font-sans">
+                            Luxor ⇄ Aswan (3 or 4 Nights)
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                        <div class="space-y-2">
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-pharaoh-lightGold transition">Blue Shadow Nile Cruise</h3>
+                            <p class="text-xs text-stone-300 leading-relaxed">
+                                Sleek contemporary styling with floor-to-ceiling panoramic glass windows in every stateroom, expansive sun-deck cocktail lounge, and live evening Nubian folk shows.
+                            </p>
+                        </div>
+                        <div class="space-y-2.5 text-xs text-stone-300 border-t border-b border-obsidian-border py-3">
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Open Buffet International &amp; Egyptian Cuisine</div>
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Daily Temple Excursions with Private Guide</div>
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Sundeck Swimming Pool &amp; Shaded Daybeds</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="text-[10px] uppercase text-stone-400 block font-cinzel">From</span>
+                                <span class="font-cinzel text-2xl font-black text-white">$390<span class="text-xs font-normal text-stone-400">/person</span></span>
+                            </div>
+                            <button onclick="openBookingModal('Blue Shadow 5-Star Deluxe Nile Cruise', 390)" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold to-amber-600 text-obsidian-base font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl hover:scale-105 transition shadow cursor-pointer">
+                                Inquire Cabins
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vessel 3: Royal Dahabiya Charter -->
+                <div class="luxury-card rounded-3xl overflow-hidden border border-pharaoh-gold/40 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/nile_felucca_aswan.jpg" alt="Traditional Royal Dahabiya Private Nile Charter" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-obsidian-base/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-pharaoh-gold/40 text-[10px] font-cinzel font-bold text-pharaoh-lightGold uppercase tracking-wider">
+                            Exclusive Boutique Charter
+                        </div>
+                        <div class="absolute bottom-3 right-4 bg-amber-500/90 text-obsidian-base px-3 py-1 rounded-full text-xs font-black font-sans">
+                            Private VIP Experience
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                        <div class="space-y-2">
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-pharaoh-lightGold transition">Private Royal Dahabiya Sailing</h3>
+                            <p class="text-xs text-stone-300 leading-relaxed">
+                                The aristocratic way to travel Egypt. Only 6 to 8 private suites on a silent twin-masted sailing yacht. Mooring at private islands inaccessible to big motor ships.
+                            </p>
+                        </div>
+                        <div class="space-y-2.5 text-xs text-stone-300 border-t border-b border-obsidian-border py-3">
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Dedicated Private Chef Serving Market-Fresh Meals</div>
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Flexible Unhurried Itinerary (Sail with the Winds)</div>
+                            <div class="flex items-center gap-2 text-stone-300"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Exclusive Stops at Gebel El-Silsila Ancient Quarries</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="text-[10px] uppercase text-stone-400 block font-cinzel">From</span>
+                                <span class="font-cinzel text-2xl font-black text-white">$750<span class="text-xs font-normal text-stone-400">/person</span></span>
+                            </div>
+                            <button onclick="openBookingModal('Private Royal Dahabiya Sailing Charter', 750)" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold to-amber-600 text-obsidian-base font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl hover:scale-105 transition shadow cursor-pointer">
+                                Reserve Dahabiya
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION: VIP TRANSFERS & CHAUFFEUR FLEET (Major Profit Center!) -->
+    <section id="transfers" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="space-y-3 max-w-2xl">
+                <div class="inline-flex items-center gap-2 text-pharaoh-gold text-xs font-cinzel font-bold tracking-[0.25em] uppercase">
+                    <i data-lucide="car" class="w-4 h-4"></i>
+                    <span>Chauffeur &amp; Intercity Fleet</span>
+                </div>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-black text-white leading-tight">
+                    Private VIP Transfers &amp; Chauffeur Service
+                </h2>
+                <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                    Skip taxi haggling and cramped bus schedules. Modern air-conditioned private vehicles, licensed professional drivers, cold mineral water, and complimentary high-speed Wi-Fi onboard.
+                </p>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 text-xs text-stone-300">
+                <span class="px-3 py-1.5 rounded-lg bg-obsidian-card border border-stone-700 flex items-center gap-1.5"><i data-lucide="wifi" class="w-3.5 h-3.5 text-emerald-400"></i> Free Wi-Fi</span>
+                <span class="px-3 py-1.5 rounded-lg bg-obsidian-card border border-stone-700 flex items-center gap-1.5"><i data-lucide="snowflake" class="w-3.5 h-3.5 text-pharaoh-lightGold"></i> Dual A/C</span>
+                <span class="px-3 py-1.5 rounded-lg bg-obsidian-card border border-stone-700 flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5 text-emerald-400"></i> Licensed</span>
+            </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Route 1: Airport VIP -->
+            <div class="luxury-card rounded-2xl p-6 border border-stone-800 hover:border-pharaoh-gold/60 flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-pharaoh-gold/15 text-pharaoh-lightGold flex items-center justify-center">
+                        <i data-lucide="plane-landing" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-cinzel text-lg font-bold text-white">Luxor Airport VIP Transfer</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Personal driver waiting with your name placard at arrivals hall. Direct drop-off at any hotel, villa, or cruise dock in Luxor.
+                    </p>
+                    <div class="text-[11px] text-stone-300 space-y-1 pt-1">
+                        <div>⏱️ Duration: 25 - 40 Mins</div>
+                        <div>👥 Capacity: 1 - 4 Passengers</div>
+                    </div>
+                </div>
+                <div class="pt-3 border-t border-obsidian-border flex items-center justify-between">
+                    <span class="font-cinzel text-xl font-bold text-white">$20 <span class="text-[10px] text-stone-400 font-normal">/vehicle</span></span>
+                    <button onclick="openBookingModal('Luxor Airport VIP Transfer ($20)', 20)" class="px-3.5 py-2 bg-obsidian-card hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel text-xs font-bold rounded-lg border border-pharaoh-gold/40 transition cursor-pointer">
+                        Book Transfer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Route 2: Luxor to Hurghada -->
+            <div class="luxury-card rounded-2xl p-6 border border-stone-800 hover:border-pharaoh-gold/60 flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-pharaoh-gold/15 text-pharaoh-lightGold flex items-center justify-center">
+                        <i data-lucide="sun" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-cinzel text-lg font-bold text-white">Luxor ⇄ Hurghada Red Sea</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Scenic, safe cross-desert private transfer straight from your Luxor hotel to your Red Sea resort door. Rest stops upon request.
+                    </p>
+                    <div class="text-[11px] text-stone-300 space-y-1 pt-1">
+                        <div>⏱️ Duration: 3.5 - 4.0 Hours</div>
+                        <div>🛣️ Door-to-Door Private Car</div>
+                    </div>
+                </div>
+                <div class="pt-3 border-t border-obsidian-border flex items-center justify-between">
+                    <span class="font-cinzel text-xl font-bold text-white">$95 <span class="text-[10px] text-stone-400 font-normal">/vehicle</span></span>
+                    <button onclick="openBookingModal('Luxor to Hurghada Private Chauffeur ($95)', 95)" class="px-3.5 py-2 bg-obsidian-card hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel text-xs font-bold rounded-lg border border-pharaoh-gold/40 transition cursor-pointer">
+                        Book Transfer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Route 3: Luxor to Aswan via Temples -->
+            <div class="luxury-card rounded-2xl p-6 border border-stone-800 hover:border-pharaoh-gold/60 flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-pharaoh-gold/15 text-pharaoh-lightGold flex items-center justify-center">
+                        <i data-lucide="landmark" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-cinzel text-lg font-bold text-white">Luxor ⇄ Aswan via Temples</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        The ultimate road trip. Turn travel time into an expedition with guided stops at Edfu Temple (Horus) and Kom Ombo Crocodile Temple.
+                    </p>
+                    <div class="text-[11px] text-stone-300 space-y-1 pt-1">
+                        <div>⏱️ Full Day Sightseeing Route</div>
+                        <div>🏛️ Edfu &amp; Kom Ombo Stops</div>
+                    </div>
+                </div>
+                <div class="pt-3 border-t border-obsidian-border flex items-center justify-between">
+                    <span class="font-cinzel text-xl font-bold text-white">$115 <span class="text-[10px] text-stone-400 font-normal">/vehicle</span></span>
+                    <button onclick="openBookingModal('Luxor to Aswan Sightseeing Transfer ($115)', 115)" class="px-3.5 py-2 bg-obsidian-card hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel text-xs font-bold rounded-lg border border-pharaoh-gold/40 transition cursor-pointer">
+                        Book Transfer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Route 4: Luxor to Marsa Alam -->
+            <div class="luxury-card rounded-2xl p-6 border border-stone-800 hover:border-pharaoh-gold/60 flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-pharaoh-gold/15 text-pharaoh-lightGold flex items-center justify-center">
+                        <i data-lucide="waves" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-cinzel text-lg font-bold text-white">Luxor ⇄ Marsa Alam Resort</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Direct connection from the ancient temples of Luxor to Egypt’s premier diving paradise in Marsa Alam or Port Ghalib resorts.
+                    </p>
+                    <div class="text-[11px] text-stone-300 space-y-1 pt-1">
+                        <div>⏱️ Duration: 4.5 Hours</div>
+                        <div>🤿 Direct Resort Drop-off</div>
+                    </div>
+                </div>
+                <div class="pt-3 border-t border-obsidian-border flex items-center justify-between">
+                    <span class="font-cinzel text-xl font-bold text-white">$110 <span class="text-[10px] text-stone-400 font-normal">/vehicle</span></span>
+                    <button onclick="openBookingModal('Luxor to Marsa Alam Private Transfer ($110)', 110)" class="px-3.5 py-2 bg-obsidian-card hover:bg-pharaoh-gold hover:text-obsidian-base text-pharaoh-lightGold font-cinzel text-xs font-bold rounded-lg border border-pharaoh-gold/40 transition cursor-pointer">
+                        Book Transfer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION: CUSTOM JOURNEY BUILDER (Automated WhatsApp Sales Funnel!) -->
+    <section id="trip-builder" class="py-24 bg-obsidian-surface border-t border-b border-obsidian-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <div class="inline-flex items-center gap-2 text-pharaoh-gold text-xs font-cinzel font-bold tracking-[0.25em] uppercase">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Interactive Itinerary Engine</span>
+                </div>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-black text-white">
+                    Design Your Bespoke Egyptian Journey
+                </h2>
+                <p class="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto">
+                    Select the experiences you wish to combine. Our reservation desk will instantly construct your private schedule and dispatch a comprehensive WhatsApp proposal with preferential package pricing.
+                </p>
+            </div>
+
+            <div class="luxury-card rounded-3xl p-6 sm:p-10 border border-pharaoh-gold/40 space-y-8">
+                <!-- Step 1: Select Desired Experiences -->
+                <div class="space-y-4">
+                    <label class="block font-cinzel text-xs font-bold uppercase tracking-widest text-pharaoh-lightGold">
+                        1. Select What You Want Included:
+                    </label>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs" id="customTripOptions">
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="Sunrise Hot Air Balloon Flight" class="rounded accent-amber-500 w-4 h-4">
+                            <span class="text-stone-200">🎈 Sunrise Hot Air Balloon</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="Valley of the Kings & Hatshepsut" class="rounded accent-amber-500 w-4 h-4" checked>
+                            <span class="text-stone-200">👑 Valley of the Kings &amp; Hatshepsut</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="Karnak & Luxor Sunset Temples" class="rounded accent-amber-500 w-4 h-4" checked>
+                            <span class="text-stone-200">🏛️ Karnak &amp; Luxor Temples</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="5-Star Nile Cruise (Luxor-Aswan)" class="rounded accent-amber-500 w-4 h-4">
+                            <span class="text-stone-200">⛵ 5-Star Nile Cruise Booking</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="Sunset Nile Felucca Sailing" class="rounded accent-amber-500 w-4 h-4">
+                            <span class="text-stone-200">⛵ Sunset Nile Felucca Sailing</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="Sunset Desert Quad Bike Safari" class="rounded accent-amber-500 w-4 h-4">
+                            <span class="text-stone-200">🏜️ Desert Quad Bike Safari</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="5-Star Hotel Stay Reservation" class="rounded accent-amber-500 w-4 h-4">
+                            <span class="text-stone-200">🛎️ 5-Star Nile Resort Booking</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="VIP Airport Meet & Assist" class="rounded accent-amber-500 w-4 h-4" checked>
+                            <span class="text-stone-200">🚐 Airport VIP Chauffeur</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-obsidian-card border border-stone-800 hover:border-pharaoh-gold/60 cursor-pointer transition">
+                            <input type="checkbox" value="Hurghada Red Sea Private Transfer" class="rounded accent-amber-500 w-4 h-4">
+                            <span class="text-stone-200">🏖️ Hurghada Red Sea Transfer</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2: Trip Parameters -->
+                <div class="grid sm:grid-cols-3 gap-4 pt-4 border-t border-obsidian-border text-xs">
+                    <div>
+                        <label class="block font-semibold text-stone-300 mb-1.5 font-cinzel uppercase tracking-wider text-[11px]">Travel Dates / Month:</label>
+                        <input type="text" id="builderDates" placeholder="e.g. November 15 - 20" class="w-full bg-obsidian-card text-white border border-stone-700 rounded-xl px-3.5 py-3 text-base sm:text-xs focus:outline-none focus:border-pharaoh-gold">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-stone-300 mb-1.5 font-cinzel uppercase tracking-wider text-[11px]">Number of Travelers:</label>
+                        <select id="builderTravelers" class="w-full bg-obsidian-card text-white border border-stone-700 rounded-xl px-3.5 py-3 text-base sm:text-xs focus:outline-none focus:border-pharaoh-gold">
+                            <option value="1 Solo Traveler">1 Solo Traveler</option>
+                            <option value="2 People (Couple / Pair)" selected>2 People (Couple / Pair)</option>
+                            <option value="3 - 4 People (Family)">3 - 4 People (Family)</option>
+                            <option value="5+ People (Private Group)">5+ People (Private Group)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-stone-300 mb-1.5 font-cinzel uppercase tracking-wider text-[11px]">Preferred Pacing:</label>
+                        <select id="builderPace" class="w-full bg-obsidian-card text-white border border-stone-700 rounded-xl px-3.5 py-3 text-base sm:text-xs focus:outline-none focus:border-pharaoh-gold">
+                            <option value="Relaxed & Leisurely (Plenty of pool/Nile time)">Relaxed &amp; Leisurely</option>
+                            <option value="Balanced Explorer (Temples in morning, relax in afternoon)" selected>Balanced Explorer</option>
+                            <option value="High-Impact (See all major sites in 2-3 days)">High-Impact Action</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit WhatsApp Action -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-obsidian-border">
+                    <div class="text-xs text-stone-300">
+                        <span class="flex items-center gap-1.5 text-emerald-400 font-semibold"><i data-lucide="zap" class="w-4 h-4"></i> Instant WhatsApp Dispatch</span>
+                        <span>Zero upfront payment • Tailored proposal delivered in under 15 minutes.</span>
+                    </div>
+                    <button type="button" onclick="handleCustomBuilderSubmit()" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 hover:from-emerald-500 hover:to-emerald-400 text-white font-cinzel font-black text-xs uppercase tracking-widest rounded-xl shadow-xl shadow-emerald-950/50 hover:scale-105 transition flex items-center justify-center gap-2 cursor-pointer">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white stroke-none"></i>
+                        <span>Get Custom WhatsApp Proposal</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION: ABOUT LUXOR BOOKING TOURS (Authoritative Agency & Local Operator Profile) -->
     <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="luxury-card rounded-3xl p-8 sm:p-14 border-pharaoh-gold/40 grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-5 relative">
                 <div class="w-full h-96 sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl border-2 border-pharaoh-gold relative">
-                    <img src="images/egyptologist.jpg" onerror="this.src='https://www.luxorbookingtours.com/assets/imgs/page/homepage1/author1.jpg'" alt="Luxor Booking Tours Licensed Egyptologist" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-base/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-center">
-                        <span class="font-cinzel font-bold text-white text-lg block">Luxor Booking Tours</span>
-                        <span class="text-xs text-pharaoh-lightGold uppercase tracking-widest font-medium">Founder & Head Egyptologist</span>
+                    <img src="images/egyptologist.jpg" onerror="this.src='https://www.luxorbookingtours.com/assets/imgs/page/homepage1/author1.jpg'" alt="Luxor Booking Tours Senior Guide &amp; Operations Team" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-base/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 right-5 text-center">
+                        <span class="font-cinzel font-black text-white text-xl block">Luxor Booking Tours</span>
+                        <span class="text-xs text-pharaoh-lightGold uppercase tracking-widest font-semibold">Licensed Tour Operator • Upper Egypt</span>
                     </div>
                 </div>
-                <!-- Floating Badge -->
-                <div class="absolute -top-4 -right-4 bg-gradient-to-br from-pharaoh-gold to-amber-600 text-obsidian-base px-4 py-2 rounded-xl font-cinzel font-black text-xs uppercase tracking-widest shadow-xl">
-                    12+ Years Guiding
+                <!-- Floating Authority Badge -->
+                <div class="absolute -top-4 -right-4 bg-gradient-to-br from-pharaoh-gold to-amber-600 text-obsidian-base px-4 py-2.5 rounded-xl font-cinzel font-black text-xs uppercase tracking-widest shadow-xl flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>15+ Years Registered</span>
                 </div>
             </div>
 
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 text-pharaoh-gold text-xs font-cinzel font-bold uppercase tracking-widest">
                     <i data-lucide="compass" class="w-4 h-4"></i>
-                    <span>Your Dedicated Local Host in Upper Egypt</span>
+                    <span>Direct Local Tour Operator • West Bank, Luxor</span>
                 </div>
 
                 <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                    "When you book with us, you arrive as a guest and leave as family."
+                    "Direct Local Expertise. Zero Middlemen. 100% Uncompromised Safety."
                 </h2>
 
                 <p class="text-stone-300 text-sm sm:text-base leading-relaxed font-light">
-                    Welcome to <strong>Luxor Booking Tours</strong>! Born and raised right here on Luxor’s West Bank, just five minutes from the Valley of the Kings. The pharaohs aren’t just ancient history to us—they are the story of our homeland.
+                    Founded and managed directly on Luxor’s historic West Bank, <strong>Luxor Booking Tours</strong> is a fully licensed Egyptian destination management company specializing in boutique private tours, 5-star Nile cruise charters, sunrise hot air balloons, and cross-Egypt VIP chauffeur transfers.
                 </p>
 
                 <p class="text-stone-300 text-sm sm:text-base leading-relaxed font-light">
-                    Many tourists arrive in Egypt feeling overwhelmed by touts, taxi negotiations, and chaotic schedules. Our agency was created to give you the <strong>peace, luxury, and warmth</strong> you deserve. Whether you need a private car, sunrise hot air balloon, Nile felucca sailing, or the best room in a 5-star Nile resort—we take care of every detail personally.
+                    Unlike multinational online booking platforms (like Viator or GetYourGuide) that charge steep 25% commissions and outsource your day to unknown subcontractors, we own and manage our ground logistics directly: our own air-conditioned Mercedes &amp; HiAce vehicles, university-licensed Egyptologist guides, and direct cabin allocations on Luxor's top five-star Nile cruise vessels.
                 </p>
 
                 <div class="grid grid-cols-3 gap-4 pt-4 border-t border-obsidian-border text-center">
                     <div>
-                        <div class="font-cinzel text-3xl font-extrabold text-pharaoh-lightGold">1,200+</div>
-                        <div class="text-[11px] uppercase tracking-wider text-stone-400 mt-1">Expeditions Led</div>
+                        <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-pharaoh-lightGold">1,800+</div>
+                        <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-stone-400 mt-1">Expeditions Dispatched</div>
                     </div>
                     <div>
-                        <div class="font-cinzel text-3xl font-extrabold text-pharaoh-lightGold">50+</div>
-                        <div class="text-[11px] uppercase tracking-wider text-stone-400 mt-1">Countries Welcomed</div>
+                        <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-pharaoh-lightGold">45+</div>
+                        <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-stone-400 mt-1">Countries Welcomed</div>
                     </div>
                     <div>
-                        <div class="font-cinzel text-3xl font-extrabold text-pharaoh-lightGold">100%</div>
-                        <div class="text-[11px] uppercase tracking-wider text-stone-400 mt-1">No-Stress Guarantee</div>
+                        <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-pharaoh-lightGold">100%</div>
+                        <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-stone-400 mt-1">Pay on Arrival</div>
                     </div>
                 </div>
 
                 <div class="pt-4 flex flex-wrap items-center gap-4">
-                    <button onclick="openBookingModal('Custom Tailored Consultation', 0)" class="px-7 py-3.5 bg-gradient-to-r from-pharaoh-gold via-pharaoh-lightGold to-pharaoh-gold text-obsidian-base font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl shadow hover:scale-105 transition">
-                        Chat With Our Team
+                    <button onclick="openBookingModal('Custom Tailored VIP Itinerary Consultation', 0)" class="px-7 py-3.5 bg-gradient-to-r from-pharaoh-gold via-pharaoh-lightGold to-pharaoh-gold text-obsidian-base font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl shadow hover:scale-105 transition cursor-pointer">
+                        Plan Journey With Us
                     </button>
-                    <a href="https://wa.me/201019831144?text=Hello,%20I%20am%20planning%20a%20trip%20to%20Luxor!" target="_blank" class="px-6 py-3.5 bg-emerald-600/20 hover:bg-emerald-600 text-emerald-400 hover:text-white rounded-xl border border-emerald-500/30 font-cinzel font-bold text-xs uppercase tracking-wider transition flex items-center gap-2">
+                    <a href="https://wa.me/201019831144?text=Hello%20Luxor%20Booking%20Tours!%20I%20am%20interested%20in%20planning%20a%20private%20tour." target="_blank" class="px-6 py-3.5 bg-emerald-600/20 hover:bg-emerald-600 text-emerald-400 hover:text-white rounded-xl border border-emerald-500/30 font-cinzel font-bold text-xs uppercase tracking-wider transition flex items-center gap-2">
                         <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i>
-                        <span>WhatsApp Us Now</span>
+                        <span>WhatsApp Reservations Desk</span>
                     </a>
                 </div>
             </div>
@@ -1006,12 +1352,8 @@
     <footer class="bg-black border-t border-obsidian-border text-stone-400 py-16 px-4">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 text-sm">
             <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-pharaoh-gold to-yellow-300 flex items-center justify-center text-obsidian-base font-cinzel font-black">B</div>
-                    <div class="flex items-center gap-3">
-                        <img src="logo.svg" alt="Luxor Booking Tours" class="h-8 w-auto">
-                        <span class="font-cinzel font-extrabold text-white text-xl tracking-widest">LUXOR BOOKING</span>
-                    </div>
+                <div class="flex items-center">
+                    <img src="logo.svg" alt="Luxor Booking Tours" class="h-10 w-auto filter drop-shadow">
                 </div>
                 <p class="text-xs text-stone-400 leading-relaxed font-light">
                     Licensed boutique tour operator in Luxor, Egypt. Curating private temple expeditions, sunrise balloon rides, and hotel accommodations across Upper Egypt.
@@ -1042,9 +1384,9 @@
             <div>
                 <h4 class="text-white font-cinzel font-bold mb-4 text-xs uppercase tracking-widest">Direct Contact</h4>
                 <div class="space-y-3 text-xs">
-                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-pharaoh-gold"></i> <span class="bob-address-display">Luxor, West Bank, Egypt</span></p>
-                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> WhatsApp: <span class="bob-phone-display">+20 101 983 1144</span></p>
-                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-sky-400"></i> <a href="mailto:info@luxorbookingtours.com" class="bob-email-display hover:underline">info@luxorbookingtours.com</a></p>
+                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-pharaoh-gold"></i> <span class="lbt-address-display">Luxor, West Bank, Egypt</span></p>
+                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> WhatsApp: <span class="lbt-phone-display">+20 101 983 1144</span></p>
+                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-sky-400"></i> <a href="mailto:info@luxorbookingtours.com" class="lbt-email-display hover:underline">info@luxorbookingtours.com</a></p>
                 </div>
             </div>
         </div>
@@ -1211,7 +1553,7 @@
     <!-- JavaScript Engine -->
     <script>
         // OWNER'S WHATSAPP NUMBER - Easily change this anytime!
-        const BOB_WHATSAPP_NUMBER = "201019831144"; // Replace with Bob's real phone number
+        const LUXOR_WHATSAPP_NUMBER = "201019831144"; // Official Luxor Booking Tours Hotline
 
         // Initialize Lucide Icons
         lucide.createIcons();
@@ -1320,6 +1662,33 @@
             }
         }
 
+        
+        function handleCustomBuilderSubmit() {
+            const checkedBoxes = document.querySelectorAll('#customTripOptions input[type="checkbox"]:checked');
+            const items = Array.from(checkedBoxes).map(cb => cb.value);
+            const dates = document.getElementById('builderDates').value.trim() || 'Flexible / Upcoming Winter Season';
+            const travelers = document.getElementById('builderTravelers').value;
+            const pace = document.getElementById('builderPace').value;
+
+            if (items.length === 0) {
+                alert('Please select at least one experience or service!');
+                return;
+            }
+
+            const message = `🏛️ *NEW CUSTOM ITINERARY REQUEST — LUXOR BOOKING TOURS*\n` +
+                `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+                `✨ *Selected Experiences:*\n` +
+                items.map(it => `  • ${it}`).join('\n') + `\n\n` +
+                `📅 *Travel Dates:* ${dates}\n` +
+                `👥 *Travelers:* ${travelers}\n` +
+                `⏱️ *Preferred Pacing:* ${pace}\n` +
+                `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+                `Hello Luxor Booking Tours! Please send me your tailored proposal & best package quotation.`;
+
+            const whatsappUrl = `https://wa.me/201019831144?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
         function handleBookingSubmit(event) {
             event.preventDefault();
 
@@ -1341,7 +1710,7 @@
                 hotelInfo = `🛎️ Accommodation Request: NEEDS HOTEL (${hotelType})`;
             }
 
-            // Construct professional WhatsApp message for Bob
+            // Construct professional WhatsApp message for Luxor Booking Tours
             let message = `🏛️ *NEW RESERVATION - LUXOR BOOKING TOURS*\n`;
             message += `--------------------------------------\n`;
             message += `👤 *Tourist Name:* ${name}\n`;
@@ -1357,7 +1726,7 @@
             message += `--------------------------------------\n`;
             message += `✅ Please confirm availability and pickup time!`;
 
-            // Save lead to local CRM storage so Bob sees it in his Admin Portal
+            // Save lead to local CRM storage for Admin Portal
             try {
                 if (typeof addBobBooking === 'function') {
                     addBobBooking({
@@ -1379,7 +1748,7 @@
                 console.warn("Could not save lead to CRM storage", err);
             }
 
-            const activeNum = window.ACTIVE_BOB_WHATSAPP || (typeof getBobConfig === 'function' ? getBobConfig().whatsapp : BOB_WHATSAPP_NUMBER);
+            const activeNum = window.ACTIVE_BOB_WHATSAPP || (typeof getBobConfig === 'function' ? getBobConfig().whatsapp : LUXOR_WHATSAPP_NUMBER);
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${activeNum}?text=${encodedMessage}`;
 
