@@ -1,14 +1,22 @@
 /**
- * BOB LUXOR TOURS - CENTRAL CONFIGURATION & SYNC ENGINE
- * Connects the public website (index.html) with the Admin Control Dashboard (admin.html)
+ * LUXOR BOOKING TOURS - CENTRAL CONFIGURATION & REALTIME SYNC ENGINE
+ * Connects the public website (index.html) with the Operator Control Dashboard (admin.html)
  */
 
 const DEFAULT_BOB_CONFIG = {
     whatsapp: "201019831144",
     phoneDisplay: "+20 101 983 1144",
     email: "info@luxorbookingtours.com",
-    address: "Luxor, Egypt",
+    address: "West Bank, Luxor, Egypt",
     adminPin: "luxor2026",
+    categories: {
+        balloons: true,
+        temples: true,
+        cruises: true,
+        hotels: true,
+        transfers: true,
+        daytrips: true
+    },
     promoBanner: {
         active: true,
         badge: "Season Special",
@@ -24,6 +32,7 @@ const DEFAULT_BOB_CONFIG = {
             priceUSD: 65,
             duration: "2-3 Hours",
             badge: "Bestseller",
+            image: "images/balloon_sunrise.png",
             active: true
         },
         {
@@ -33,6 +42,7 @@ const DEFAULT_BOB_CONFIG = {
             priceUSD: 45,
             duration: "4-5 Hours",
             badge: "Must-See",
+            image: "images/west_bank_hatshepsut.jpg",
             active: true
         },
         {
@@ -42,6 +52,7 @@ const DEFAULT_BOB_CONFIG = {
             priceUSD: 40,
             duration: "3-4 Hours",
             badge: "Popular",
+            image: "images/karnak_temple.jpg",
             active: true
         },
         {
@@ -51,6 +62,7 @@ const DEFAULT_BOB_CONFIG = {
             priceUSD: 120,
             duration: "Full Day (8-9h)",
             badge: "VIP Exclusive",
+            image: "images/hero_slider_15.jpg",
             active: true
         },
         {
@@ -60,6 +72,17 @@ const DEFAULT_BOB_CONFIG = {
             priceUSD: 30,
             duration: "2 Hours",
             badge: "Romantic",
+            image: "images/nile_felucca.webp",
+            active: true
+        },
+        {
+            id: "quad",
+            title: "Sunset Desert Quad Bike Safari",
+            category: "daytrips",
+            priceUSD: 35,
+            duration: "2 Hours",
+            badge: "Adventure",
+            image: "images/desert_quad.jpg",
             active: true
         },
         {
@@ -69,23 +92,24 @@ const DEFAULT_BOB_CONFIG = {
             priceUSD: 95,
             duration: "Full Day (8h)",
             badge: "Historical",
+            image: "images/abu_simbel.webp",
             active: true
         }
     ],
     hotels: [
         {
             id: "resort",
-            name: "5-Star Nile View Luxury Resort",
+            name: "Hilton Luxor Resort & Spa",
             tag: "VIP Luxury",
-            desc: "Panoramic Nile views, infinity swimming pools, full breakfast buffet included. Partner resorts: Steigenberger Nile Palace & Sonesta St. George.",
-            priceNote: "From $110 / night"
+            desc: "Panoramic Nile views, infinity swimming pools, full breakfast buffet included. Direct Nile access on Karnak waterfront.",
+            priceNote: "From $120 / night"
         },
         {
             id: "villa",
-            name: "West Bank Private Heritage Villa",
-            tag: "Authentic & Quiet",
-            desc: "Private pool, authentic Nubian & Luxor architecture, quiet countryside village feel near the Valley of the Kings.",
-            priceNote: "From $65 / night"
+            name: "Steigenberger Resort Achti Luxor",
+            tag: "5-Star Heritage",
+            desc: "Luxury 8-acre tropical garden resort situated on the peaceful east bank of the Nile with sunset cocktail lounge.",
+            priceNote: "From $95 / night"
         },
         {
             id: "dahabiya",
@@ -97,98 +121,90 @@ const DEFAULT_BOB_CONFIG = {
     ]
 };
 
-// Initial realistic demo inquiries so Bob sees how the CRM works upon first login
 const SAMPLE_BOOKINGS = [
     {
-        id: "BK-LUX849",
-        timestamp: new Date(Date.now() - 3600000 * 4).toISOString(),
-        name: "Sarah Jenkins",
+        id: "LBT-8921",
+        date: "2026-10-24 18:30",
+        name: "James & Emma Watson",
         country: "United Kingdom",
         phone: "+44 7911 123456",
-        date: "2026-11-14",
-        travelers: "2 Adults",
-        tour: "Sunrise Hot Air Balloon Flight",
-        hotelChoice: "need_hotel",
-        hotelInfo: "NEEDS HOTEL (5-Star Nile View Resort)",
-        notes: "Celebrating 10th anniversary. Would love front basket spot for photography.",
-        status: "New"
+        tour: "Sunrise Hot Air Balloon Flight ($65)",
+        travelers: "2 People (Couple)",
+        tourDate: "2026-11-04",
+        hotelInfo: "Steigenberger Nile Palace (Need pickup)",
+        notes: "Celebrating 10th wedding anniversary. Would love early sunrise flight slot.",
+        status: "Confirmed",
+        amountUSD: 130
     },
     {
-        id: "BK-LUX722",
-        timestamp: new Date(Date.now() - 3600000 * 22).toISOString(),
-        name: "Marco Rossi",
-        country: "Italy",
-        phone: "+39 340 9876543",
-        date: "2026-11-18",
-        travelers: "3 Adults",
-        tour: "Valley of the Kings & Hatshepsut Private Tour",
-        hotelChoice: "have_hotel",
-        hotelInfo: "Staying at Hilton Luxor Resort & Spa",
-        notes: "Interested in visiting King Tut and Seti I tombs. Italian or English speaking guide.",
-        status: "Contacted"
-    },
-    {
-        id: "BK-LUX519",
-        timestamp: new Date(Date.now() - 3600000 * 48).toISOString(),
-        name: "David & Elena Mueller",
+        id: "LBT-8920",
+        date: "2026-10-24 14:15",
+        name: "Dr. Klaus Becker",
         country: "Germany",
-        phone: "+49 170 5551234",
-        date: "2026-11-20",
-        travelers: "2 Adults",
-        tour: "The Ultimate Full-Day Luxor & Balloon",
-        hotelChoice: "have_hotel",
-        hotelInfo: "Staying at Sofitel Winter Palace Luxor",
-        notes: "Airport pickup needed from Luxor airport at 11:30 AM.",
-        status: "Confirmed"
+        phone: "+49 170 9876543",
+        tour: "5-Star Nile Cruise Luxor to Aswan (4 Nights)",
+        travelers: "2 People",
+        tourDate: "2026-11-12",
+        hotelInfo: "Direct airport arrival",
+        notes: "German-speaking private guide preferred for Kom Ombo and Edfu.",
+        status: "In Discussion",
+        amountUSD: 780
+    },
+    {
+        id: "LBT-8919",
+        date: "2026-10-23 20:05",
+        name: "Sophie Martin",
+        country: "France",
+        phone: "+33 6 12 34 56 78",
+        tour: "Valley of the Kings & Hatshepsut ($45)",
+        travelers: "3 People (Family)",
+        tourDate: "2026-10-30",
+        hotelInfo: "Sofitel Winter Palace",
+        notes: "Traveling with 12yo teenager. Interested in King Tut's tomb entry.",
+        status: "Completed",
+        amountUSD: 135
     }
 ];
 
-// Configuration Storage Helpers
 function getBobConfig() {
     try {
         const stored = localStorage.getItem('bob_luxor_config');
         if (stored) {
             const parsed = JSON.parse(stored);
-            return Object.assign({}, DEFAULT_BOB_CONFIG, parsed);
+            return {
+                ...DEFAULT_BOB_CONFIG,
+                ...parsed,
+                categories: { ...DEFAULT_BOB_CONFIG.categories, ...(parsed.categories || {}) }
+            };
         }
     } catch (e) {
-        console.warn("Could not read bob_luxor_config from localStorage, using default", e);
+        console.warn("Could not read bob_luxor_config", e);
     }
-    return JSON.parse(JSON.stringify(DEFAULT_BOB_CONFIG));
+    return DEFAULT_BOB_CONFIG;
 }
 
-function saveBobConfig(newConfig) {
+function saveBobConfig(config) {
     try {
-        localStorage.setItem('bob_luxor_config', JSON.stringify(newConfig));
+        localStorage.setItem('bob_luxor_config', JSON.stringify(config));
+        applyBobConfigToFrontend();
         return true;
     } catch (e) {
-        console.error("Error saving bob_luxor_config", e);
+        console.error("Error saving config", e);
         return false;
     }
 }
 
-function resetBobConfig() {
-    try {
-        localStorage.removeItem('bob_luxor_config');
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
-// Bookings / Leads CRM Storage Helpers
 function getBobBookings() {
     try {
-        const stored = localStorage.getItem('bob_luxor_bookings');
+        const stored = localStorage.getItem('bob_luxor_bookings') || localStorage.getItem('luxor_bookings');
         if (stored) {
             return JSON.parse(stored);
         } else {
-            // Seed sample bookings for the first time
             localStorage.setItem('bob_luxor_bookings', JSON.stringify(SAMPLE_BOOKINGS));
             return SAMPLE_BOOKINGS;
         }
     } catch (e) {
-        console.warn("Could not read bob_luxor_bookings", e);
+        console.warn("Could not read bookings", e);
         return SAMPLE_BOOKINGS;
     }
 }
@@ -196,6 +212,7 @@ function getBobBookings() {
 function saveBobBookings(bookingsList) {
     try {
         localStorage.setItem('bob_luxor_bookings', JSON.stringify(bookingsList));
+        localStorage.setItem('luxor_bookings', JSON.stringify(bookingsList));
         return true;
     } catch (e) {
         console.error("Error saving bookings", e);
@@ -229,7 +246,7 @@ function deleteBooking(id) {
 // Client-Side DOM Applier for index.html
 function applyBobConfigToFrontend() {
     const config = getBobConfig();
-    const cleanWhatsApp = config.whatsapp.replace(/[^0-9]/g, '');
+    const cleanWhatsApp = (config.whatsapp || "201019831144").replace(/[^0-9]/g, '');
 
     // 1. Update all WhatsApp links
     const waLinks = document.querySelectorAll('a[href*="wa.me"]');
@@ -258,25 +275,78 @@ function applyBobConfigToFrontend() {
         el.textContent = config.address;
     });
 
-    // 5. Update Tour Prices dynamically
+    // 5. Category Visibility Toggles
+    if (config.categories) {
+        const cats = config.categories;
+        
+        // Hide/Show Filter Tabs
+        Object.keys(cats).forEach(catKey => {
+            const isVisible = cats[catKey] !== false;
+            
+            // Tab button in tours
+            const tabBtn = document.querySelector(`.tab-btn[data-category="${catKey}"]`);
+            if (tabBtn) {
+                tabBtn.style.display = isVisible ? '' : 'none';
+            }
+
+            // Cards matching category
+            document.querySelectorAll(`.tour-card[data-category="${catKey}"]`).forEach(card => {
+                if (!isVisible) {
+                    card.style.display = 'none';
+                    card.classList.add('category-hidden');
+                } else {
+                    card.classList.remove('category-hidden');
+                    // Check if current filter allows it
+                    const activeTab = document.querySelector('.tab-btn.active');
+                    const activeCat = activeTab ? activeTab.getAttribute('data-category') : 'all';
+                    if (activeCat === 'all' || activeCat === catKey) {
+                        card.style.display = '';
+                    }
+                }
+            });
+
+            // Dedicated Sections
+            if (catKey === 'cruises') {
+                const cruiseSec = document.getElementById('cruises');
+                if (cruiseSec) cruiseSec.style.display = isVisible ? '' : 'none';
+            }
+            if (catKey === 'transfers') {
+                const transSec = document.getElementById('transfers');
+                if (transSec) transSec.style.display = isVisible ? '' : 'none';
+            }
+        });
+    }
+
+    // 6. Update Tour Prices & Visibility dynamically
     if (config.tours && config.tours.length > 0) {
         config.tours.forEach(t => {
             const el = document.querySelector(`[data-tour-id="${t.id}"]`);
             if (el) {
                 el.setAttribute('data-usd', t.priceUSD);
-                // Also trigger currency calculation if defined
-                if (typeof window.changeCurrency === 'function') {
-                    const selector = document.getElementById('currencySelector');
-                    const curr = selector ? selector.value : 'USD';
-                    window.changeCurrency(curr);
-                } else {
-                    el.textContent = `$${t.priceUSD}`;
+                const card = el.closest('.tour-card');
+                if (card) {
+                    if (t.active === false) {
+                        card.style.display = 'none';
+                        card.classList.add('admin-disabled');
+                    } else if (!card.classList.contains('category-hidden')) {
+                        card.classList.remove('admin-disabled');
+                    }
                 }
+            } else if (t.isCustom && document.getElementById('toursGrid')) {
+                // Dynamically Render Custom Added Tour Card if not already rendered
+                renderCustomTourToDOM(t);
             }
         });
+
+        // Trigger currency calculation if present
+        if (typeof window.changeCurrency === 'function') {
+            const selector = document.getElementById('currencySelector');
+            const curr = selector ? selector.value : 'USD';
+            window.changeCurrency(curr);
+        }
     }
 
-    // 6. Inject / Update Promo Banner
+    // 7. Inject / Update Promo Banner
     const existingBanner = document.getElementById('bobPromoBanner');
     if (config.promoBanner && config.promoBanner.active) {
         if (!existingBanner) {
@@ -302,10 +372,65 @@ function applyBobConfigToFrontend() {
         existingBanner.style.display = 'none';
     }
 
-    // Export clean WhatsApp to global for index.html booking submit handler
+    // Export clean WhatsApp to global
     window.ACTIVE_BOB_WHATSAPP = cleanWhatsApp;
     window.ACTIVE_LUXOR_WHATSAPP = cleanWhatsApp;
 }
+
+// Function to dynamically append custom added tours from Admin to index.html #toursGrid
+function renderCustomTourToDOM(tour) {
+    const grid = document.getElementById('toursGrid');
+    if (!grid || document.getElementById(`card-${tour.id}`)) return;
+
+    const card = document.createElement('div');
+    card.id = `card-${tour.id}`;
+    card.className = `tour-card luxury-card rounded-3xl overflow-hidden flex flex-col group border border-pharaoh-gold/40`;
+    card.setAttribute('data-category', tour.category || 'all');
+
+    const imgSrc = tour.image || 'images/balloon_sunrise.png';
+    card.innerHTML = `
+        <div class="relative h-60 overflow-hidden">
+            <img src="${imgSrc}" onerror="this.src='images/balloon_sunrise.png'" alt="${tour.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+                <span class="bg-gradient-to-r from-pharaoh-gold to-amber-600 text-obsidian-base font-cinzel font-bold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
+                    ${tour.badge || 'New Experience'}
+                </span>
+            </div>
+            <div class="absolute bottom-3 right-4 bg-obsidian-base/80 backdrop-blur-md px-3 py-1 rounded-full border border-pharaoh-gold/30 text-xs font-semibold text-pharaoh-lightGold">
+                ${tour.duration || 'Flexible'}
+            </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+                <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-pharaoh-lightGold transition">
+                    ${tour.title}
+                </h3>
+                <p class="text-xs text-stone-300 mt-2 font-light leading-relaxed">
+                    ${tour.desc || 'Custom curated private expedition with dedicated Egyptologist and private air-conditioned transport.'}
+                </p>
+            </div>
+            <div class="pt-4 border-t border-obsidian-border flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] uppercase text-stone-400 block font-cinzel">Price per person</span>
+                    <span class="font-cinzel text-2xl font-bold text-white price-val" data-tour-id="${tour.id}" data-usd="${tour.priceUSD}">$${tour.priceUSD}</span>
+                </div>
+                <button onclick="openBookingModal('${tour.title.replace(/'/g, "\\'")}', ${tour.priceUSD})" class="px-5 py-2.5 bg-gradient-to-r from-pharaoh-gold via-pharaoh-lightGold to-yellow-600 hover:from-pharaoh-lightGold hover:to-pharaoh-gold text-obsidian-base font-cinzel font-bold text-xs uppercase tracking-wider rounded-xl transition shadow hover:scale-105 cursor-pointer">
+                    Book Tour
+                </button>
+            </div>
+        </div>
+    `;
+
+    grid.appendChild(card);
+}
+
+// Aliases for clean modern naming
+const getLuxorConfig = getBobConfig;
+const saveLuxorConfig = saveBobConfig;
+const getLuxorBookings = getBobBookings;
+const saveLuxorBookings = saveBobBookings;
+const addLuxorBooking = addBobBooking;
 
 // Auto-run if running on index.html
 if (typeof document !== 'undefined') {
@@ -315,5 +440,3 @@ if (typeof document !== 'undefined') {
         }
     });
 }
-
-const addLuxorBooking = typeof addBobBooking !== 'undefined' ? addBobBooking : function(){};
