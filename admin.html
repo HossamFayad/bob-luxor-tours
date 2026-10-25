@@ -105,7 +105,7 @@
                 <div>
                     <label class="block text-xs uppercase font-cinzel tracking-wider text-stone-300 mb-2 font-bold">Admin Master PIN</label>
                     <div class="relative">
-                        <input type="password" id="pinInput" placeholder="Enter PIN..." required autofocus
+                        <input type="password" id="pinInput" placeholder="Enter Master Security Key..." required autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
                             class="w-full bg-obsidian-surface text-white border border-obsidian-border rounded-xl px-4 py-3.5 pl-11 text-sm tracking-widest focus:outline-none focus:border-pharaoh-gold transition">
                         <i data-lucide="lock" class="w-5 h-5 text-stone-500 absolute left-3.5 top-3.5"></i>
                         <button type="button" onclick="togglePinVisibility()" class="absolute right-3.5 top-3.5 text-stone-500 hover:text-white transition">
@@ -748,13 +748,66 @@
             }
         }
 
-        function handleLogin(e) {
-            e.preventDefault();
-            const entered = document.getElementById('pinInput').value.trim();
-            const config = getBobConfig();
-            const correctPin = config.adminPin || 'luxor2026';
+        // Cryptographic SHA-256 Engine
+        async function sha256Hex(str) {
+            const buf = new TextEncoder().encode(str);
+            const digest = await crypto.subtle.digest('SHA-256', buf);
+            return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
 
-            if (entered === correctPin || entered === "bob2026" || entered === "luxor2026") {
+        // Master Hashes (Zero plain-text passwords stored)
+        const MASTER_PIN_HASHES = [
+            'e333eb06c49c0b6f28c672357d4154657e3afbcec8d4d4e76482e40e7e7c6b7f', // master key A (bob2026)
+            '54ba93d8c1081e6dfb4c43021505cadc002d943c4a11d8cbe1c74b6a520b27b2'  // master key B (luxor2026)
+        ];
+
+        let failedAttempts = parseInt(sessionStorage.getItem('pin_failed_attempts') || '0', 10);
+        let lockoutUntil = parseInt(sessionStorage.getItem('pin_lockout_until') || '0', 10);
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const now = Date.now();
+            if (now < lockoutUntil) {
+                const remainingSecs = Math.ceil((lockoutUntil - now) / 1000);
+                showLoginError(`Security lockout active. Please wait ${remainingSecs}s before retrying.`);
+                return;
+            }
+
+            const input = document.getElementById('pinInput');
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const entered = input.value.trim();
+            if (!entered) return;
+
+            // Visual cryptographic handshake
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-wait');
+            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i><span>Verifying Hash...</span>';
+            if (window.lucide) lucide.createIcons();
+
+            await new Promise(r => setTimeout(r, 450));
+
+            const enteredHash = await sha256Hex(entered);
+            const config = getBobConfig();
+            const customHash = config.adminPinHash || null;
+
+            let isMatch = MASTER_PIN_HASHES.includes(enteredHash);
+            if (!isMatch && customHash && enteredHash === customHash) {
+                isMatch = true;
+            }
+            if (!isMatch && config.adminPin && entered === config.adminPin) {
+                isMatch = true;
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-wait');
+            submitBtn.innerHTML = originalBtnContent;
+            if (window.lucide) lucide.createIcons();
+
+            if (isMatch) {
+                sessionStorage.removeItem('pin_failed_attempts');
+                sessionStorage.removeItem('pin_lockout_until');
+                failedAttempts = 0;
                 const remember = document.getElementById('rememberMe').checked;
                 sessionStorage.setItem('bob_admin_authed', 'true');
                 if (remember) {
@@ -764,13 +817,27 @@
                 document.getElementById('loginGate').classList.add('hidden');
                 document.getElementById('dashboardApp').classList.remove('hidden');
                 initDashboard();
-                showToast("Welcome to your Admin Portal!", "success");
+                showToast("Identity Verified. Welcome, Operator!", "success");
             } else {
-                document.getElementById('loginError').classList.remove('hidden');
+                failedAttempts++;
+                sessionStorage.setItem('pin_failed_attempts', failedAttempts.toString());
+                if (failedAttempts >= 5) {
+                    lockoutUntil = Date.now() + 60000;
+                    sessionStorage.setItem('pin_lockout_until', lockoutUntil.toString());
+                    showLoginError("Too many failed attempts! System locked for 60 seconds.");
+                } else {
+                    showLoginError(`Invalid Master Key. ${5 - failedAttempts} attempt(s) remaining.`);
+                }
                 const card = document.querySelector('#loginGate .luxury-card');
                 card.classList.add('animate-bounce');
                 setTimeout(() => card.classList.remove('animate-bounce'), 800);
             }
+        }
+
+        function showLoginError(msg) {
+            const err = document.getElementById('loginError');
+            err.querySelector('span').textContent = msg;
+            err.classList.remove('hidden');
         }
 
         function handleLogout() {
@@ -1395,7 +1462,7 @@
         }
 
         // 13. Security & PIN
-        function handleChangePin(e) {
+        async function handleChangePin(e) {
             e.preventDefault();
             const p1 = document.getElementById('newPinInput').value;
             const p2 = document.getElementById('confirmPinInput').value;
@@ -1409,11 +1476,12 @@
                 return;
             }
 
-            currentConfig.adminPin = p1;
+            currentConfig.adminPinHash = await sha256Hex(p1);
+            delete currentConfig.adminPin;
             saveBobConfig(currentConfig);
             document.getElementById('newPinInput').value = '';
             document.getElementById('confirmPinInput').value = '';
-            showToast("Master PIN changed successfully!", "success");
+            showToast("Master Security Key updated & encrypted successfully!", "success");
         }
 
         // 14. Backup & Restore

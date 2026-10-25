@@ -8,7 +8,7 @@ const DEFAULT_BOB_CONFIG = {
     phoneDisplay: "+20 101 983 1144",
     email: "info@luxorbookingtours.com",
     address: "West Bank, Luxor, Egypt",
-    adminPin: "luxor2026",
+    adminPinHash: "54ba93d8c1081e6dfb4c43021505cadc002d943c4a11d8cbe1c74b6a520b27b2", // SHA-256 encrypted
     categories: {
         balloons: true,
         temples: true,
