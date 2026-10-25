@@ -757,8 +757,8 @@
 
         // Master Hashes (Zero plain-text passwords stored)
         const MASTER_PIN_HASHES = [
-            'e333eb06c49c0b6f28c672357d4154657e3afbcec8d4d4e76482e40e7e7c6b7f', // master key A (bob2026)
-            '54ba93d8c1081e6dfb4c43021505cadc002d943c4a11d8cbe1c74b6a520b27b2'  // master key B (luxor2026)
+            'e333eb06c49c0b6f28c672357d4154657e3afbcec8d4d4e76482e40e7e7c6b7f', // Primary Encrypted Master Signature A
+            '54ba93d8c1081e6dfb4c43021505cadc002d943c4a11d8cbe1c74b6a520b27b2'  // Secondary Encrypted Master Signature B
         ];
 
         let failedAttempts = parseInt(sessionStorage.getItem('pin_failed_attempts') || '0', 10);
